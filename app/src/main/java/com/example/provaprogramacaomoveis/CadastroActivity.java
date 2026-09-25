@@ -9,11 +9,12 @@ import android.widget.Toast;
 
 public class CadastroActivity extends Activity {
 
-    private EditText edtRA;
-    private EditText edtNome;
-    private EditText edtEmail;
+    private EditText edtRA, edtNome, edtEmail;
 
     private Button btnSalvar;
+
+    private SharedPreferences preferences;
+    private static final String NOME_ARQUIVO = "dados_aluno";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +34,40 @@ public class CadastroActivity extends Activity {
 
         carregarDados();
 
-        btnSalvar.setOnClickListener(v -> salvarDados());
+        btnSalvar.setOnClickListener(view -> {
+            salvarDados();
+        });
     }
 
+    private void salvarDados() {
+        String ra = edtRA.getText().toString().trim();
+        String nome = edtNome.getText().toString().trim();
+        String email = edtEmail.getText().toString().trim();
+
+        if (ra.isEmpty() || nome.isEmpty() || email.isEmpty()) {
+            Toast.makeText(this,
+                    "Preencha todos os campos.",
+                    Toast.LENGTH_SHORT).show();
+            return;
+        } else{
+            Toast.makeText(this,
+                    "Dados Salvos com sucesso!",
+                    Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void carregarDados() {
+
+        String ra = preferences.getString("ra", "");
+        String nome = preferences.getString("nome", "");
+        String email = preferences.getString("email", "");
+
+        edtRA.setText(ra);
+        edtNome.setText(nome);
+        edtEmail.setText(email);
+    }
+
+
 }
+
 
