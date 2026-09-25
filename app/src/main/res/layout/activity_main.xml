@@ -10,30 +10,30 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Prova de Programação"
+        android:layout_marginBottom="20dp"
+        android:text="Prova Simone"
         android:textSize="28sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="20dp" />
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Aplicativo para cálculo da média do aluno e cadastro de seus dados."
-        android:textSize="18sp"
+        android:layout_marginBottom="30dp"
         android:gravity="center"
-        android:layout_marginBottom="30dp" />
+        android:text="Tela inicial"
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/btnNotas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="1 - Calcular Média"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="16dp"
+        android:text="Calcular Média Final" />
 
     <Button
         android:id="@+id/btnCadastro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="2 - Cadastrar Aluno" />
+        android:text="Cadastrar Aluno" />
 
 </LinearLayout>
